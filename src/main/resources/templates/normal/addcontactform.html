@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section class="banner mt-5">
+
+
+<div class="container">
+   <div class="row mt-5 ">
+       <div class="col-md-6 offset-md-3">
+    
+                  <div  th:if="${session.name}"   th:classappend="${session.name.error}" class="alert text-center" role="alert">
+                           <div th:text="${session.name.text}">John Doe</div>
+                          <th:block th:text="${#session.removeAttribute('name')}"></th:block>
+                      </div>
+       
+       <form  th:object="${contact}" 
+         method="post" th:action="@{/user/do_addconttac}" class="bg-white p-4">
+  
+  
+         <h1>Add Contact Here ..</h1>
+          
+          
+  <div class="form-group">
+    <label for="username">Name</label>
+    <input type="text" class="form-control " 
+    id="exampleusername" name="name" 
+   
+   placeholder="Enter Name Here">
+   </div>
+   
+     <div class="form-group">
+    <label for="secondname">Second Name</label>
+    <input type="text" class="form-control " 
+    id="secondname" name="secondname" 
+  
+   placeholder="Enter secondname Here">
+   </div>
+   
+   <div class="form-group">
+    <label for="phone">Phone</label>
+    <input type="text" class="form-control " 
+    id="phone" name="phone" 
+  
+   placeholder="Enter phone number Here">
+   </div>
+   
+   <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" class="form-control " 
+    id="email" name="email" 
+  
+   placeholder="Enter email  Here">
+   </div>
+   
+      
+   
+  
+  <div class="form-group">
+    <label for="work">work</label>
+    <input type="text" class="form-control" id="work"
+    
+     name="work" aria-describedby="emailHelp" placeholder="Enter your work">
+     </div>
+     
+   
+   
+  
+       <div class="form-group">
+    <label for="userpassword">description</label>
+    
+     <textarea   name="description" class="form-control" 
+     id="exampleFormControlTextarea1" placeholder="Enter description here" rows="5"></textarea>
+      </div>
+  
+  <!--  <div class="custom-file">
+           <input type="file" name="image">
+  </div> 
+     -->
+   
+  <div class="text-center">
+  <button type="submit" class="btn btn-primary">Submit</button>
+ </div>
+ 
+</form>
+       
+       </div>
+   </div>
+</div>
+
+
+</body>
+</html>

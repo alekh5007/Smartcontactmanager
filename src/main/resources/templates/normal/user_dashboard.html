@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section class="banner mt-5">
+<h1>Welcome to Dashboard Manager</h1>
+<p>this is all about storing contact</p>
+<p>Welcome <span th:text="${user.name}"></span></p>
+<p>Email is <span th:text="${user.email}"></span></p>
+</section>
+
+</body>
+</html>
